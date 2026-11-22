@@ -1,0 +1,49 @@
+{
+  "name": "opencode-slack",
+  "version": "0.1.0",
+  "description": "Self-hosted Slack Socket Mode bridge for OpenCode V2",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chirag127/opencode-slack.git"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "opencode-slack": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "examples",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "test": "tsc -p tsconfig.test.json && node --test --test-timeout=20000 .test-dist/test/*.test.js",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@opencode/client": "2.3.2",
+    "@slack/bolt": "5.1.0",
+    "undici": "8.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/ws": "8.18.1",
+    "typescript": "6.0.3",
+    "ws": "8.22.1"
+  }
+}

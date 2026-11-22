@@ -1,0 +1,10 @@
+{
+  "teamID": "TEXAMPLE",
+  "appID": "AEXAMPLE",
+  "users": ["UEXAMPLE"],
+  "channels": [
+    { "channelID": "CEXAMPLE", "directory": "/workspace/your-project" }
+  ],
+  "serverURL": "http://127.0.0.1:49374",
+  "stateFile": "../.state/bridge.sqlite"
+}
